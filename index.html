@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Insurance Premium Predictor and Disease Predictor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2>Health Insurance Premium Predictor</h2>
+            </div>
+            <div class="card-body">
+                <form id="premiumForm" action="/predict" method="post">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" name="age" id="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bmi">BMI:</label>
+                        <input type="text" class="form-control" name="bmi" id="bmi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Number of Children:</label>
+                        <input type="number" class="form-control" name="children" id="children" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="smoker">Are you a smoker?</label>
+                        <select class="form-control" name="smoker" id="smoker" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="region">Region:</label>
+                        <select class="form-control" name="region" id="region" required>
+                            <option value="0">Northeast</option>
+                            <option value="1">Southeast</option>
+                            <option value="2">Northwest</option>
+                            <option value="3">Southwest</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="predictBtn">Predict</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <p id="result"></p>
+                <img id="plotImage" src="data:image/png;base64,{{ plot }}" alt="Visualization" class="img-fluid mt-4">
+            </div>
+        </div>
+
+        <div class="card mt-5">
+            <div class="card-header text-center">
+                <h2>Disease Predictor</h2>
+            </div>
+            <div class="card-body">
+                <form id="diseaseForm" action="/disease" method="post">
+                    <div class="form-group">
+                        <label for="symptoms">Symptoms:</label>
+                        <textarea class="form-control" name="symptoms" id="symptoms" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="diseasePredictBtn">Predict Disease</button>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <p id="diseaseResult"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
