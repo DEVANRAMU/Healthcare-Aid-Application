@@ -1,0 +1,82 @@
+body {
+ background-color: #f8f9fa;
+ font-family: 'Arial', sans-serif;
+}
+.card {
+ border-radius: 10px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease-in-out;
+}
+.card:hover {
+ transform: scale(1.05);
+}
+.card-header {
+ background-color: #007bff;
+ color: white;
+ border-radius: 10px 10px 0 0;
+ padding: 15px;
+}
+.card-body {
+ padding: 20px;
+}
+.card-footer {
+ background-color: #f1f1f1;
+ border-radius: 0 0 10px 10px;
+ padding: 15px;
+}
+.btn-primary {
+ background-color: #007bff;
+ border: none;
+ transition: background-color 0.3s, transform 0.3s;
+}
+.btn-primary:hover {
+ background-color: #0056b3;
+ transform: scale(1.02);
+}
+#predictBtn {
+ position: relative;
+ overflow: hidden;
+}
+#predictBtn:before {
+ content: "";
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 300%;
+ height: 300%;
+ background-color: rgba(255, 255, 255, 0.3);
+ transition: all 0.6s ease;
+ transform: translateX(-50%) translateY(-50%) scale(0);
+ opacity: 0;
+}
+#predictBtn:hover:before {
+ transform: translateX(-50%) translateY(-50%) scale(1);
+ opacity: 1;
+}
+#result {
+ font-size: 1.2em;
+ color: #28a745;
+ margin-top: 20px;
+}
+img#plotImage {
+ border-radius: 10px;
+ margin-top: 20px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+form .form-group {
+ margin-bottom: 15px;
+}
+form .form-control {
+ border-radius: 5px;
+ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+form label {
+ font-weight: bold;
+}
+.card-header h2 {
+ margin: 0;
+}
+.card-footer p {
+ font-size: 1.1em;
+ margin: 0;
+}
